@@ -4,7 +4,10 @@
 }
 .nav-outer{
     
+   position: fixed;
+    
     height:50px;
+   
     width:100% ;
     background-color: aqua;
     display: flex;
@@ -32,16 +35,77 @@ li a{
 
 }
 .container{
+  position: relative;
+  top: 100px;
 display: flex;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 width: 100vw;
-height: calc(100vh - 50px);align-content: start;
+height: 500px;align-content: start;
 }
-.box{
-    height: 100px;
-    margin: 5px;
+
+.box {
     width: 100px;
-    background-color: black;
+    height: 100px;
+    background-color: cornflowerblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    animation: slideIn 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(200px);
+      transform: translateX(200px);
+      transform: rotateX(0);
+    }
+    to {
+      transform: rotateX(360);
+      transform: translateX(200px);
+      transform: translateY(200px);
+    }
+  }
+
+ 
+.box:hover{
+    transform: scale(1.1);
+    background-color: #007BFF;
+   
+    
+}
+.navlinks li :hover{
+    border: solid 2px black;
+}
+.progressbar{
+  width: 200px;
+  height: 30px;
+  border: solid 5px black;
+  display: inline-block;
+  position: relative;
+  left: calc(50% - 100px);
+}
+.bar{
+  height: 100%;
+  background-color: blue;
+  animation: p 5s ;
+}
+@keyframes p {
+  0%{width: 0%;
+
+  }
+  30%{
+    width: 30%;
+  }
+  60%{
+    width: 60%;
+  }
+  100%{
+    width: 100%;
+   
+  }
+  
 }
