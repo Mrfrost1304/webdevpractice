@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .playbutton{
+            height: 40px;
+            width: 200px;
+            border: solid black 2px;
+            margin: 30px;
+            border-radius: 10px;
+            background-color: rgb(148, 205, 205);
+            font-weight: 700;
+            font-size: larger;
+        }
+        .playbutton:hover{
+            transform: scale(1.1);
+        }
+        .playbutton:active{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stone Paper Scissor Game</h1>
+    <button class="playbutton" onclick="let compChoice = genrateCompChoice(); let result = whoWin('stone', compChoice); showResult('stone', compChoice, result);">Stone</button>
+
+    <button class="playbutton" onclick="compChoice = genrateCompChoice(); result = whoWin('paper', compChoice); showResult('paper', compChoice, result);">Paper</button>
+    <button class="playbutton" onclick="compChoice = genrateCompChoice(); result = whoWin('scissor', compChoice); showResult('scissor', compChoice, result);">Scissor</button>
+
+</body>
+<script>
+    let scorestr=localStorage.getItem('score');
+    let overall = JSON.parse(scorestr) || {
+        win : 0,
+        loss: 0,
+        tie :0 ,
+       
+    };
+    overall.displayScore= function(){
+        return `No of matches Won:${this.win}, Lost:${this.loss}, Tie: ${this.tie}`;
+    }
+        
+      
+   
+   
+   function genrateCompChoice(){
+    let n = Math.random() * 3;
+    if (n >= 0 && n < 1) {
+        return 'stone';
+    } else if (n >= 1 && n < 2) {
+        return 'paper';
+    } else {
+        return 'scissor';
+    }
+}
+
+    function whoWin(userMove, computerMove) {
+    if (userMove === computerMove) {
+        overall.tie++;
+        return "It's a tie.";
+
+    }
+    if (
+        (userMove === 'stone' && computerMove === 'scissor') ||
+        (userMove === 'paper' && computerMove === 'stone') ||
+        (userMove === 'scissor' && computerMove === 'paper')
+    ) {
+        overall.win++;
+        return "User has won.";
+    } else {
+        overall.loss++
+        return "Computer has won.";
+    }
+}
+
+    function showResult(userMove, computerMove, result) {
+
+      alert(`You have chosen ${userMove}. Computer choice is ${computerMove} and ${result} 
+
+      ${overall.displayScore()}`)
+      
+      localStorage.setItem('score',JSON.stringify(overall))
+      
+    }
+   
+
+</script>
+</html>
