@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cont">
+      <div id="display">
+        <input type="text" id="result" name="result" />
+      </div>
+      <div id="bot">
+        <button class="btn" id="clear" onclick="clearDisplay()">C</button>
+        <button class="btn" id="backspace" onclick="backspace()">←</button>
+        <button class="btn" id="divide" onclick="updateDisplay('/')">/</button>
+        <button class="btn" id="multiply" onclick="updateDisplay('*')">
+          *
+        </button>
+        <button class="btn" id="seven" onclick="updateDisplay(7)">7</button>
+        <button class="btn" id="eight" onclick="updateDisplay(8)">8</button>
+        <button class="btn" id="nine" onclick="updateDisplay(9)">9</button>
+        <button class="btn" id="subtract" onclick="updateDisplay('-')">
+          -
+        </button>
+        <button class="btn" id="four" onclick="updateDisplay(4)">4</button>
+        <button class="btn" id="five" onclick="updateDisplay(5)">5</button>
+        <button class="btn" id="six" onclick="updateDisplay(6)">6</button>
+        <button class="btn" id="add" onclick="updateDisplay('+')">+</button>
+        <button class="btn" id="one" onclick="updateDisplay(1)">1</button>
+        <button class="btn" id="two" onclick="updateDisplay(2)">2</button>
+        <button class="btn" id="three" onclick="updateDisplay(3)">3</button>
+        <button class="btn equal" onclick="calculate()">=</button>
+        <button class="btn zero" onclick="updateDisplay(0)">0</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    53deg,
+    #fe3387,
+    #6b44dd,
+    #c61fd4,
+    #d42d1f,
+    #ddeb48
+  );
+  background-size: 300% 300%;
+  animation: gradient-animation 30s ease infinite;
+  height: 100vh;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.setTimer {
+  font-family: 'Dancing Script', cursive;
+
+  font-style: normal;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: auto;
+  transition: transform 0.3s ease;
+
+  margin: 20px;
+}
+.setTimer:hover {
+  transform: scale(1.05);
+}
+#date-Time {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.eventDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+#eventName {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#startButton {
+  background-color: #23a6d5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#startButton:hover {
+  background-color: #1a8bbf;
+}
+
+.countdown {
+  display: none;
+  font-family: 'Dancing Script', cursive;
+  font-style: normal;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: auto;
+}
+
+.countdown h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.cdisplay {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+.cdisplay span {
+  font-family: 'Bitcount Grid Double', system-ui;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+  font-variation-settings: 'slnt' 0, 'CRSV' 0.5, 'ELSH' 0, 'ELXP' 0;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#reset {
+  margin-top: 30px;
+  background-color: #d42d1f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+#reset:hover {
+  background-color: #b21f1f;
+}

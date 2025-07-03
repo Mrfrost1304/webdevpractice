@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Count Down Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+  <div class="setTimer">
+    <h1>Set Timer</h1>
+    <div class="eventDetails">
+      <input type="text" name="eventName" id="eventName" placeholder="Event Name" />
+      <input type="datetime-local" name="date-Time" id="date-Time" />
+    
+    </div>
+    
+    <button id="startButton" onclick="getdetails()">Start</button>
+  </div>
+  <div class="countdown">
+    <h1 id="title">Countdown</h1>
+    <div class="countdown-timer">
+      <div class="cdisplay"> 
+        <span id="days">00 Days</span>
+        <span id="hours">00 Hours</span>
+        <span id="minutes">00 Minutes</span>
+        <span id="seconds">00 Seconds</span>
+      </div>
+
+      <button id="reset" type="reset" onclick="reset()">Reset</button>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
